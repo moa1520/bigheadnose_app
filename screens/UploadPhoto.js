@@ -24,7 +24,19 @@ const Text = styled.Text`
 `;
 
 const UploadPhoto = ({ route }) => {
-  const { photo } = route.params;
+  const [img, setImg] = useState();
+  const { photo, uri } = route.params;
+
+  const setting = async () => {
+    const file = await FileSystem.readAsStringAsync(uri, {
+      encoding: FileSystem.EncodingType.Base64,
+    });
+    setImg(file);
+  };
+
+  useEffect(() => {
+    setting();
+  }, []);
 
   // const file = {
   //   uri: photo.uri,
@@ -42,8 +54,8 @@ const UploadPhoto = ({ route }) => {
 
   const upload = () => {
     axios
-      .post("http://bigheadnose.herokuapp.com:5000/", { uri: photo.uri })
-      .then((res) => console.log(res))
+      .post("http://127.0.0.1:5000/img_test", { img })
+      .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
 
     // // 아마존으로 사진 전송

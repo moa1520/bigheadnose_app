@@ -46,8 +46,8 @@ const Test = () => {
 
   const sendFunction = () => {
     axios
-      .post("http://localhost:5000/", { file })
-      .then((res) => console.log(res))
+      .post("https://bigheadnose.herokuapp.com/img_test", { img: file })
+      .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
   };
 

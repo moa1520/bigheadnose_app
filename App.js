@@ -12,6 +12,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Test" component={Test} />
         <Stack.Screen
           name="TakePhoto"
           component={TakePhoto}
@@ -31,7 +32,6 @@ const App = () => {
             headerTintColor: "black",
           }}
         />
-        <Stack.Screen name="Test" component={Test} />
       </Stack.Navigator>
     </NavigationContainer>
   );
