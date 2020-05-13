@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Image, TouchableOpacity } from "react-native";
 import axios from "axios";
 import * as FileSystem from "expo-file-system";
-import { Asset } from "expo-asset";
-import { RNS3 } from "react-native-s3-upload";
 import constants from "../constants";
 
 const Conatiner = styled.View`
@@ -38,36 +36,11 @@ const UploadPhoto = ({ route }) => {
     setting();
   }, []);
 
-  // const file = {
-  //   uri: photo.uri,
-  //   name: "image.png",
-  //   type: "image/png",
-  // };
-
-  const options = {
-    bucket: "headnose",
-    region: "ap-northeast-2",
-    accessKey: "AKIAUDD2AATE4FHIFUIE",
-    secretKey: "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",
-    successActionStatus: 201,
-  };
-
   const upload = () => {
     axios
       .post("http://127.0.0.1:5000/img_test", { img })
       .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
-
-    // // 아마존으로 사진 전송
-    // const put = await RNS3.put(file, options).then((response) => {
-    //   if (response.status !== 201)
-    //     throw new Error("Failed to upload image to S3");
-    //   console.log(response.body);
-    // });
-    // if (put !== undefined) {
-    //   console.log(put);
-    //   // 파이썬과 통신 부분
-    // }
   };
 
   return (

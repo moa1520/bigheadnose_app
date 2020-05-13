@@ -22,14 +22,6 @@ const Text = styled.Text`
 
 const Test = () => {
   const [file, setFile] = useState();
-  // const sendHttp = () => {
-  //   axios
-  //     .post("https://us-central1-bigheadnose.cloudfunctions.net/bigheadnose", {
-  //       message: "hi~!",
-  //     })
-  //     .then(({ data }) => console.log(data))
-  //     .catch((err) => console.log(err));
-  // };
   const imgLocation =
     "/Users/taekyoungkang/Desktop/TK/capstone/big/img/0525.jpeg";
 
