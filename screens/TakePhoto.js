@@ -43,6 +43,23 @@ const TakePhoto = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(false);
   const [cameraType, setCameraType] = useState(Camera.Constants.Type.front);
 
+  navigation.setOptions({
+    headerRight: () => (
+      <TouchableOpacity
+        onPress={() => {
+          if (cameraType == Camera.Constants.Type.front) {
+            setCameraType(Camera.Constants.Type.back);
+          } else {
+            setCameraType(Camera.Constants.Type.front);
+          }
+        }}
+        style={{ marginRight: 20 }}
+      >
+        <Ionicons name={"ios-sync"} size={28} color={"gray"} />
+      </TouchableOpacity>
+    ),
+  });
+
   const takePhoto = async () => {
     if (!canTakePhoto) {
       return;
@@ -79,23 +96,6 @@ const TakePhoto = ({ navigation }) => {
       setLoading(false);
     }
   };
-
-  navigation.setOptions({
-    headerRight: () => (
-      <TouchableOpacity
-        onPress={() => {
-          if (cameraType == Camera.Constants.Type.front) {
-            setCameraType(Camera.Constants.Type.back);
-          } else {
-            setCameraType(Camera.Constants.Type.front);
-          }
-        }}
-        style={{ marginRight: 20 }}
-      >
-        <Ionicons name={"ios-sync"} size={28} color={"gray"} />
-      </TouchableOpacity>
-    ),
-  });
 
   useEffect(() => {
     askPermission();

@@ -5,20 +5,21 @@ import axios from "axios";
 import * as FileSystem from "expo-file-system";
 import constants from "../constants";
 
-const Conatiner = styled.View`
+const Container = styled.View`
   flex: 1;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 const Button = styled.View`
-  border: 1px solid lightgray;
-  padding: 10px;
-  background-color: skyblue;
+  background-color: #00cec9;
+  padding: 5px;
 `;
 
 const Text = styled.Text`
-  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
 `;
 
 const UploadPhoto = ({ route }) => {
@@ -38,27 +39,29 @@ const UploadPhoto = ({ route }) => {
 
   const upload = () => {
     axios
+      // .post("https://bigheadnose.herokuapp.com/img_test", { img })
       .post("http://127.0.0.1:5000/img_test", { img })
       .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
   };
 
   return (
-    <Conatiner>
+    <Container>
       <Image
         source={{ uri: photo.uri }}
         style={{
           width: constants.width / 1.5,
           height: constants.width / 1.5,
-          marginBottom: 30,
+
+          marginBottom: 100,
         }}
       />
       <TouchableOpacity onPress={upload}>
         <Button>
-          <Text>퍼스널 컬러 확인하기</Text>
+          <Text>퍼스널 컬러 결과 확인하기</Text>
         </Button>
       </TouchableOpacity>
-    </Conatiner>
+    </Container>
   );
 };
 

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Test from "./screens/Test";
 import TakePhoto from "./screens/TakePhoto";
 import UploadPhoto from "./screens/UploadPhoto";
+import Home from "./screens/Home";
 
 const Stack = createStackNavigator();
 
@@ -13,10 +14,20 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerTitle: null,
+            headerStyle: { backgroundColor: "#81ecec" },
+          }}
+        />
+        <Stack.Screen
           name="TakePhoto"
           component={TakePhoto}
           options={{
             headerTitle: null,
+            headerBackTitleVisible: false,
+            headerTintColor: "gray",
             headerStyle: {
               backgroundColor: "white",
             },
