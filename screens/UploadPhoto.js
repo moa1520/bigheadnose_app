@@ -40,7 +40,8 @@ const UploadPhoto = ({ route }) => {
   const upload = () => {
     axios
       // .post("https://bigheadnose.herokuapp.com/img_test", { img })
-      .post("http://127.0.0.1:5000/img_test", { img })
+      // .post("http://0.0.0.0:5000/test", { img })
+      .post("http://ec2-15-164-227-51.ap-northeast-2.compute.amazonaws.com:5000/predict", { img })
       .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
   };
