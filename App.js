@@ -6,6 +6,7 @@ import Test from "./screens/Test";
 import TakePhoto from "./screens/TakePhoto";
 import UploadPhoto from "./screens/UploadPhoto";
 import Home from "./screens/Home";
+import Result from "./screens/Result";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,15 @@ const App = () => {
         <Stack.Screen
           name="UploadPhoto"
           component={UploadPhoto}
+          options={{
+            headerTitle: null,
+            headerBackTitleVisible: false,
+            headerTintColor: "black",
+          }}
+        />
+        <Stack.Screen
+          name="Result"
+          component={Result}
           options={{
             headerTitle: null,
             headerBackTitleVisible: false,
