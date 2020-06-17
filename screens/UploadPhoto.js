@@ -65,6 +65,7 @@ const UploadPhoto = ({ route, navigation }) => {
           width: constants.width / 1.5,
           height: constants.width / 1.5,
           marginBottom: 100,
+          borderRadius: 15,
         }}
       />
       <TouchableOpacity onPress={upload}>

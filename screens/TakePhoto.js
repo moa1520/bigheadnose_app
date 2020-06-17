@@ -80,13 +80,8 @@ const TakePhoto = ({ navigation }) => {
 
   const askPermission = async () => {
     try {
-      const { status: status1 } = await Permissions.askAsync(
-        Permissions.CAMERA
-      );
-      const { status: status2 } = await Permissions.askAsync(
-        Permissions.CAMERA_ROLL
-      );
-      if (status1 === "granted" && status2 === "granted") {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA);
+      if (status === "granted") {
         setHasPermission(true);
       }
     } catch (e) {

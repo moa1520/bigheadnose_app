@@ -44,7 +44,11 @@ const Home = ({ navigation }) => {
         <Title>Nose</Title>
       </TitleContainer>
       <Body>
-        <TouchableOpacity onPress={() => navigation.navigate("TakePhoto")}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("PhotoNavigation", { screen: "TakePhoto" })
+          }
+        >
           <Button>
             <Text>퍼스널 컬러 진단하기</Text>
           </Button>

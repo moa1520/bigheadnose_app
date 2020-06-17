@@ -34,7 +34,7 @@ const ComponentView = styled.View`
 const BackBtn = styled.View`
   width: 100px;
   height: 30px;
-  background-color: skyblue;
+  background-color: #b2bec3;
   border: 1px solid white;
   justify-content: center;
   align-items: center;
