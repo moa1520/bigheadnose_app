@@ -47,7 +47,7 @@ const App = () => {
           name="Result"
           component={Result}
           options={{
-            headerTitle: null,
+            headerTitle: "퍼스널컬러 진단 결과",
             headerBackTitleVisible: false,
             headerTintColor: "black",
           }}

@@ -13,12 +13,13 @@ import WinterBright from "../components/WinterBright";
 import WinterCool from "../components/WinterCool";
 import WinterDeep from "../components/WinterDeep";
 import { ScrollView, TouchableOpacity } from "react-native";
+import constants from "../constants";
+import { PieChart } from "react-native-chart-kit";
 
 const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  margin: 10px;
 `;
 
 const Text = styled.Text``;
@@ -40,9 +41,26 @@ const BackBtn = styled.View`
   border-radius: 5px;
 `;
 
+const Block = styled.View`
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
+
+const BlockContainer = styled.View`
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  height: 40px;
+  opacity: 0.8;
+  border: 0.5px solid white;
+`;
+
 const Result = ({ route, navigation }) => {
   const { res } = route.params;
   // let res = { spring: 0, summer: 12, fall: 67, winter: 21 };
+
   const [fallDeep, setFallDeep] = useState(false);
   const [fallSoft, setFallSoft] = useState(false);
   const [fallWarm, setFallWarm] = useState(false);
@@ -143,21 +161,87 @@ const Result = ({ route, navigation }) => {
     toneClassify(max1, max2);
   }, []);
 
+  const data = [
+    {
+      name: "봄",
+      percentage: res.spring,
+      color: "#fdcb6e",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 15,
+    },
+    {
+      name: "여름",
+      percentage: res.summer,
+      color: "#0984e3",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 15,
+    },
+    {
+      name: "가을",
+      percentage: res.fall,
+      color: "#e17055",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 15,
+    },
+    {
+      name: "겨울",
+      percentage: res.winter,
+      color: "silver",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 15,
+    },
+  ];
+
   return (
     <ScrollView>
       <Container>
-        <Text>결과</Text>
-        <Text>봄: {res.spring}%</Text>
-        <Text>여름: {res.summer}%</Text>
-        <Text>가을: {res.fall}%</Text>
-        <Text>겨울: {res.winter}%</Text>
-        <Text>====================</Text>
-        <Text>
-          가장 높은 비율: {max1.maxStr} : {max1.max}
-        </Text>
-        <Text>
-          그 다음 높은 비율: {max2.maxStr} : {max2.max}
-        </Text>
+        <PieChart
+          data={data}
+          width={constants.width}
+          height={220}
+          chartConfig={{
+            backgroundGradientFrom: "#1E2923",
+            backgroundGradientFromOpacity: 0,
+            backgroundGradientTo: "#08130D",
+            backgroundGradientToOpacity: 0.5,
+            color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+            strokeWidth: 2, // optional, default 3
+            barPercentage: 0.5,
+            useShadowColorFromDataset: false, // optional
+          }}
+          accessor="percentage"
+          backgroundColor="transparent"
+          paddingLeft="15"
+          absolute
+        />
+        <BlockContainer>
+          <Block style={{ backgroundColor: "#fdcb6e" }}>
+            <Text style={{ fontWeight: "bold" }}>봄</Text>
+          </Block>
+          <Block style={{ backgroundColor: "#0984e3" }}>
+            <Text style={{ fontWeight: "bold" }}>여름</Text>
+          </Block>
+          <Block style={{ backgroundColor: "#e17055" }}>
+            <Text style={{ fontWeight: "bold" }}>가을</Text>
+          </Block>
+          <Block style={{ backgroundColor: "silver" }}>
+            <Text style={{ fontWeight: "bold" }}>겨울</Text>
+          </Block>
+        </BlockContainer>
+        <BlockContainer>
+          <Block style={{ backgroundColor: "#fdcb6e" }}>
+            <Text style={{ fontWeight: "bold" }}>{res.spring}%</Text>
+          </Block>
+          <Block style={{ backgroundColor: "#0984e3" }}>
+            <Text style={{ fontWeight: "bold" }}>{res.summer}%</Text>
+          </Block>
+          <Block style={{ backgroundColor: "#e17055" }}>
+            <Text style={{ fontWeight: "bold" }}>{res.fall}%</Text>
+          </Block>
+          <Block style={{ backgroundColor: "silver" }}>
+            <Text style={{ fontWeight: "bold" }}>{res.winter}%</Text>
+          </Block>
+        </BlockContainer>
         <ComponentView>
           {fallDeep ? <FallDeep /> : null}
           {fallSoft ? <FallSoft /> : null}
