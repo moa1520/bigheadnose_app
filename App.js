@@ -14,6 +14,15 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Result"
+          component={Result}
+          options={{
+            headerTitle: "퍼스널컬러 진단 결과",
+            headerBackTitleVisible: false,
+            headerTintColor: "black",
+          }}
+        />
+        <Stack.Screen
           name="Home"
           component={Home}
           options={{
@@ -38,15 +47,6 @@ const App = () => {
           component={UploadPhoto}
           options={{
             headerTitle: null,
-            headerBackTitleVisible: false,
-            headerTintColor: "black",
-          }}
-        />
-        <Stack.Screen
-          name="Result"
-          component={Result}
-          options={{
-            headerTitle: "퍼스널컬러 진단 결과",
             headerBackTitleVisible: false,
             headerTintColor: "black",
           }}

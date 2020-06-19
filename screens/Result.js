@@ -20,6 +20,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 `;
 
 const Text = styled.Text``;
@@ -28,7 +29,6 @@ const ComponentView = styled.View`
   flex: 1;
   width: 100%;
   height: 100%;
-  background-color: skyblue;
 `;
 
 const BackBtn = styled.View`
@@ -58,8 +58,8 @@ const BlockContainer = styled.View`
 `;
 
 const Result = ({ route, navigation }) => {
-  const { res } = route.params;
-  // let res = { spring: 0, summer: 12, fall: 67, winter: 21 };
+  // const { res } = route.params;
+  let res = { spring: 0, summer: 12, fall: 67, winter: 21 };
 
   const [fallDeep, setFallDeep] = useState(false);
   const [fallSoft, setFallSoft] = useState(false);

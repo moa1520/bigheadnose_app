@@ -31,7 +31,7 @@ const Button = styled.TouchableOpacity`
 
 const ImageContainer = styled.View``;
 
-const SelectPhoto = () => {
+const SelectPhoto = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [hasPermission, setHasPermission] = useState(false);
   const [selected, setSelected] = useState();
@@ -39,9 +39,6 @@ const SelectPhoto = () => {
 
   const changeSelected = (photo) => {
     setSelected(photo);
-  };
-  const handleSelected = () => {
-    navigation.navigate("Upload", { photo: selected });
   };
 
   const getPhotos = async () => {
@@ -68,6 +65,11 @@ const SelectPhoto = () => {
       console.log(e);
       setHasPermission(false);
     }
+  };
+
+  const handleSelected = async () => {
+    const { localUri } = await MediaLibrary.getAssetInfoAsync(selected);
+    navigation.navigate("UploadPhoto", { photo: selected, uri: localUri });
   };
 
   useEffect(() => {

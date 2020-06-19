@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { View, Image } from "react-native";
+import constants from "../constants";
 
 const Conatiner = styled.View`
   flex: 1;
@@ -7,12 +9,398 @@ const Conatiner = styled.View`
   align-items: center;
 `;
 
-const Text = styled.Text``;
+const Text = styled.Text`
+  color: #707070;
+`;
+
+const Banner = styled.View`
+  width: 100%;
+  height: 204px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Describe = styled.Text`
+  color: white;
+`;
+
+const Block = styled.TouchableOpacity`
+  width: 90%;
+  padding: 10px;
+`;
 
 export default () => {
+  const [menu1, setMenu1] = useState(false);
+  const [menu2, setMenu2] = useState(false);
+  const [menu3, setMenu3] = useState(false);
+  const [menu4, setMenu4] = useState(false);
+
+  const menu1Handle = (p) => {
+    if (p === false) {
+      setMenu1(true);
+      setMenu2(false);
+      setMenu3(false);
+      setMenu4(false);
+    }
+  };
+  const menu2Handle = (p) => {
+    if (p === false) {
+      setMenu1(false);
+      setMenu2(true);
+      setMenu3(false);
+      setMenu4(false);
+    }
+  };
+  const menu3Handle = (p) => {
+    if (p === false) {
+      setMenu1(false);
+      setMenu2(false);
+      setMenu3(true);
+      setMenu4(false);
+    }
+  };
+  const menu4Handle = (p) => {
+    if (p === false) {
+      setMenu1(false);
+      setMenu2(false);
+      setMenu3(false);
+      setMenu4(true);
+    }
+  };
+
   return (
     <Conatiner>
-      <Text>FallDeep</Text>
+      <Banner>
+        <Text style={{ fontSize: 28 }}>시크하고 도도한</Text>
+        <Text style={{ fontSize: 35, fontWeight: "bold" }}>가을 딥 톤</Text>
+        <Text style={{ fontSize: 28 }}>Autumn Deep Tone</Text>
+      </Banner>
+      <Banner style={{ backgroundColor: "#c0392b", height: 180 }}>
+        <Describe>'가을 웜 톤'은 저명도의 어둡고</Describe>
+        <Describe>음영있는 색이 잘 어울리는 타입입니다.</Describe>
+        <Describe>'가을 웜 톤'의 장점은 진한 스킨톤 덕분에</Describe>
+        <Describe>섹시하고 관능적인 매력을 뽐낼 수 있다는 것입니다.</Describe>
+        <Describe style={{ marginTop: 20 }}>
+          다만, 청순하고 소녀 같은 메이크업과는
+        </Describe>
+        <Describe>다소 거리가 있어 장단점이 확실한 톤입니다...</Describe>
+      </Banner>
+      <Banner style={{ height: 120 }}>
+        <Text style={{ fontSize: 24 }}>당신의</Text>
+        <Text style={{ fontSize: 24 }}>
+          <Text style={{ fontWeight: "bold" }}>가을 딥 톤</Text>의 특징
+        </Text>
+      </Banner>
+      <Block
+        style={{ backgroundColor: "#e58e26" }}
+        onPress={() => menu1Handle(menu1)}
+      >
+        <Text style={{ color: "white" }}>어울리는 컬러</Text>
+      </Block>
+      {menu1 ? (
+        <View
+          style={{
+            backgroundColor: "white",
+            padding: 20,
+            alignItems: "center",
+            width: "90%",
+          }}
+        >
+          <Image
+            source={{
+              uri:
+                "https://www.ifamily.co.kr/image/arda/result/graph_autumn_wd.jpg",
+            }}
+            style={{
+              width: constants.width * 0.9,
+              height: 337,
+              resizeMode: "contain",
+            }}
+          />
+          <View style={{ paddingVertical: 20 }}>
+            <Text>
+              당신과 조화를 이루는 색은 노란기나 붉은 기가 도는 진한색입니다.
+            </Text>
+            <Text>
+              '가을 딥 톤'은 흰빛이 섞인 고명도의 파스텔 톤 보다는 붉은빛이 섞인
+              저명도의 어두운 컬러가 잘어울립니다.
+            </Text>
+          </View>
+          <Image
+            source={{
+              uri:
+                "https://www.ifamily.co.kr/image/arda/result/palette_autumn_wd.jpg",
+            }}
+            style={{
+              width: constants.width * 0.9,
+              height: 180,
+              resizeMode: "contain",
+            }}
+          />
+        </View>
+      ) : null}
+      <Block
+        style={{ backgroundColor: "#218c74" }}
+        onPress={() => menu2Handle(menu2)}
+      >
+        <Text style={{ color: "white" }}>베스트 스타일링</Text>
+      </Block>
+      {menu2 ? (
+        <View
+          style={{
+            backgroundColor: "white",
+            padding: 20,
+            alignItems: "center",
+            width: "90%",
+          }}
+        >
+          <View style={{ width: "100%" }}>
+            <Text style={{ fontWeight: "bold" }}>1. 메이크업</Text>
+            <Text>- 아이</Text>
+            <Text>
+              노란빛이 도는 브라운 섀도우를 베이스로 깔고, 잿빛이 도는
+              브라운이나 카키색 섀도우를 활용하여 깊은 음영을 주세요. 짙은 갈색
+              아이라이너로 선명해 보이는 인상을 만들어주세요.
+            </Text>
+            <Text style={{ marginTop: 10 }}>- 치크</Text>
+            <Text>
+              오렌지 브라운 컬러의 블러셔를 사선 방향으로 발색해 주세요.
+            </Text>
+            <Text>
+              섀딩과 자연스럽게 연결하면 건강하고 관능적인 느낌을 줍니다.
+            </Text>
+            <Text style={{ marginTop: 10 }}>- 립</Text>
+            <Text>아이 메이크업이 강조될 수 있도록,</Text>
+            <Text>스킨 톤의 립스틱을 발라주세요.</Text>
+            <Text>차분함과 고급스러움을 더해 줍니다.</Text>
+          </View>
+          <Image
+            source={{
+              uri: "https://www.ifamily.co.kr/image/icolor/cometic_awd.png",
+            }}
+            style={{
+              width: constants.width * 0.9,
+              height: 180,
+              resizeMode: "contain",
+            }}
+          />
+          <View style={{ width: "100%", marginTop: 20 }}>
+            <Text style={{ fontWeight: "bold" }}>2. 헤어</Text>
+            <Text>- 컬러</Text>
+            <Text>
+              붉은빛이 도는 딥한 오렌지 브라운 컬러의 염색이 잘 어울립니다.
+            </Text>
+            <Text style={{ marginTop: 20 }}>
+              - 스타일링 굵은 웨이브가 들어간 긴 머리는 무게감 있으면서 안정된
+              분위기를 연출해줍니다.
+            </Text>
+            <Text style={{ fontWeight: "bold", marginTop: 30 }}>3. 패션</Text>
+            <Text>가을 뮤트톤보다 채도가 높은 컬러의 옷이 어울립니다. </Text>
+            <Text>
+              짙은 브라운 컬러나 버건디 컬러의 메머이드라인 드레스를 입으면 한층
+              더 성숙해 보일 것입니다.
+            </Text>
+            <Text>
+              단색의 옷에 레오파드나 호피무늬 같은 과감한 패턴의 악세서리로
+              포인트를 주는 것도 좋습니다.
+            </Text>
+          </View>
+          <Image
+            style={{
+              marginTop: 20,
+              width: constants.width * 0.9,
+              height: 530,
+              resizeMode: "contain",
+            }}
+            source={{
+              uri: "https://www.ifamily.co.kr/image/icolor/fashion_awd.png",
+            }}
+          />
+        </View>
+      ) : null}
+      <Block
+        style={{ backgroundColor: "#2c2c54" }}
+        onPress={() => menu3Handle(menu3)}
+      >
+        <Text style={{ color: "white" }}>유의해야 할 점</Text>
+      </Block>
+      {menu3 ? (
+        <View
+          style={{
+            backgroundColor: "white",
+            padding: 20,
+            alignItems: "center",
+            width: "90%",
+          }}
+        >
+          <View style={{ width: "100%" }}>
+            <Text>
+              {" "}
+              옅은 색부터 깊은 색까지 두루두루 어울려 ‘색조의 여왕’이라고 불리는
+              가을웜톤이지만, 흰 기가 강한 파스텔 색상은 소화하기 어려워요. 이런
+              색을 사용하면 이목구비와 조화를 이루지 못하고 얼굴이 칙칙해 보일
+              수 있어요. 겨울과 봄 브라이트 계열의 비비드한 컬러도 주의해주세요.
+              형광기가 강하고 채도 높은 원색을 이용한 스타일링은 색깔만 둥둥
+              떠보일 수 있어요.
+            </Text>
+            <Text
+              style={{ fontWeight: "bold", marginTop: 30, marginBottom: 10 }}
+            >
+              잘 안 어울리는 색
+            </Text>
+          </View>
+          <Image
+            style={{
+              width: constants.width * 0.9,
+              height: 120,
+              resizeMode: "contain",
+            }}
+            source={{
+              uri: "https://www.ifamily.co.kr/image/icolor/hc_autumn.png",
+            }}
+          />
+          <View style={{ marginTop: 30, width: "100%" }}>
+            <Text style={{ fontWeight: "bold", marginBottom: 20 }}>
+              메이크업
+            </Text>
+            <Text>
+              - 실버 펄 섀도우는 눈을 부어 보이게 할수 있어요. 밝고 선명한
+              오렌지나 코랄컬러 섀도우를 사용하고 싶다면 베이지,브라운 색의
+              섀도우를 베이스로 깔아 자연스럽게 연출해주세요.
+            </Text>
+            <Text>
+              - 아이메이크업을 진하게 하기 보다는 립이나 치크에 포인트를 주는게
+              더 잘 어울려요.
+            </Text>
+            <Text
+              style={{ fontWeight: "bold", marginTop: 30, marginBottom: 20 }}
+            >
+              헤어
+            </Text>
+            <Text>
+              - 바이올렛, 블루계열, 오렌지, 블론드, 화이트 블론드는 피하는 것이
+              좋아요.
+            </Text>
+            <Text
+              style={{ fontWeight: "bold", marginTop: 30, marginBottom: 20 }}
+            >
+              패션
+            </Text>
+            <Text>
+              - 액세서리는 실버보다는 골드나 로즈골드 색상을 선택하는 것이
+              좋아요.
+            </Text>
+            <Text>
+              - 레오파드, 체크, 페이즐리 패턴을 이용한 히피나 빈티지 스타일이 잘
+              어울려요.
+            </Text>
+            <Text>
+              - 옷 소재로 스웨이드나 레더 소재가 좋고, 트위드, 에나멜 소재는
+              피하는 것이좋아요. 광택나는 소재보다는 벨벳과 같은무광택 소재가
+              고급스러운 느낌을 살려줘요.
+            </Text>
+          </View>
+        </View>
+      ) : null}
+      <Block
+        style={{ backgroundColor: "#cd6133" }}
+        onPress={() => menu4Handle(menu4)}
+      >
+        <Text style={{ color: "white" }}>나와 같은 타입의 연예인</Text>
+      </Block>
+      {menu4 ? (
+        <View
+          style={{
+            backgroundColor: "white",
+            padding: 20,
+            alignItems: "center",
+            width: "90%",
+          }}
+        >
+          <View style={{ width: "100%", marginBottom: 20 }}>
+            <Text>
+              나와 같은 타입을 가진 연예인의 스타일링을 참고해 보세요.{" "}
+              <Text style={{ fontWeight: "bold" }}>
+                가을 웜 딥 타입의 대표적인 셀럽
+              </Text>
+              으로는 이효리, 박시연, 현아, 김유정씨가 있습니다.
+            </Text>
+          </View>
+          <View
+            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
+          >
+            <Image
+              style={{ width: 100, height: 100, marginRight: 10 }}
+              source={{
+                uri: "https://www.ifamily.co.kr/image/icolor/awd_1.jpg",
+              }}
+            />
+            <View>
+              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
+                따뜻한 도시 여자의 품격, 가을 딥{"\n"}③ : 이효리 / 박시연
+              </Text>
+              <Text>
+                겨울딥이 차도녀라면 따도녀는{"\n"}가을딥♡ 가을 웜은 팔레트…
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
+          >
+            <Image
+              style={{ width: 100, height: 100, marginRight: 10 }}
+              source={{
+                uri: "https://www.ifamily.co.kr/image/icolor/awd_2.jpg",
+              }}
+            />
+            <View>
+              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
+                박시연, 박시연스타일, 박시연 패션, {"\n"}웨딩드레스
+              </Text>
+              <Text>
+                매력적인 여자 박시연 스타일,{"\n"}그리고 웨딩드레스 욕감적인…
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
+          >
+            <Image
+              style={{ width: 100, height: 100, marginRight: 10 }}
+              source={{
+                uri: "https://www.ifamily.co.kr/image/icolor/awd_3.jpg",
+              }}
+            />
+            <View>
+              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
+                현아 메이크업 손수비게 하는 팁{"\n"}4가지!
+              </Text>
+              <Text>
+                현아 메이크업 손쉽게하는 팀{"\n"}4가지를 포스팅하려고….
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
+          >
+            <Image
+              style={{ width: 100, height: 100, marginRight: 10 }}
+              source={{
+                uri: "https://www.ifamily.co.kr/image/icolor/awd_4.jpg",
+              }}
+            />
+            <View>
+              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
+                가을 웜 딥 대표 연예인 `김유정`{"\n"}스타일링 Best&Worst
+              </Text>
+              <Text>
+                많은 분들의 관심사인 연예인 톤 {"\n"}궁예와 톤 추정 글! 오늘은
+                많은 {"\n"}분들이 `가을 딥` 톤…
+              </Text>
+            </View>
+          </View>
+        </View>
+      ) : null}
     </Conatiner>
   );
 };
