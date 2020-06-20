@@ -59,7 +59,8 @@ const BlockContainer = styled.View`
 
 const Result = ({ route, navigation }) => {
   // const { res } = route.params;
-  let res = { spring: 0, summer: 12, fall: 67, winter: 21 };
+  // let res = { spring: 8, summer: 87, fall: 0, winter: 5 }; // 섬머 라이트
+  let res = { spring: 5, summer: 5, fall: 80, winter: 10 }; // 섬머 라이트
 
   const [fallDeep, setFallDeep] = useState(false);
   const [fallSoft, setFallSoft] = useState(false);
@@ -172,21 +173,21 @@ const Result = ({ route, navigation }) => {
     {
       name: "여름",
       percentage: res.summer,
-      color: "#0984e3",
+      color: "rgba(253, 121, 168, 0.2)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15,
     },
     {
       name: "가을",
       percentage: res.fall,
-      color: "#e17055",
+      color: "rgba(240, 147, 43,1.0)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15,
     },
     {
       name: "겨울",
       percentage: res.winter,
-      color: "silver",
+      color: "rgba(199, 236, 238,1.0)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15,
     },
@@ -218,13 +219,13 @@ const Result = ({ route, navigation }) => {
           <Block style={{ backgroundColor: "#fdcb6e" }}>
             <Text style={{ fontWeight: "bold" }}>봄</Text>
           </Block>
-          <Block style={{ backgroundColor: "#0984e3" }}>
+          <Block style={{ backgroundColor: "rgba(253, 121, 168, 0.2)" }}>
             <Text style={{ fontWeight: "bold" }}>여름</Text>
           </Block>
-          <Block style={{ backgroundColor: "#e17055" }}>
+          <Block style={{ backgroundColor: "rgba(240, 147, 43,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>가을</Text>
           </Block>
-          <Block style={{ backgroundColor: "silver" }}>
+          <Block style={{ backgroundColor: "rgba(199, 236, 238,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>겨울</Text>
           </Block>
         </BlockContainer>
@@ -232,13 +233,13 @@ const Result = ({ route, navigation }) => {
           <Block style={{ backgroundColor: "#fdcb6e" }}>
             <Text style={{ fontWeight: "bold" }}>{res.spring}%</Text>
           </Block>
-          <Block style={{ backgroundColor: "#0984e3" }}>
+          <Block style={{ backgroundColor: "rgba(253, 121, 168, 0.2)" }}>
             <Text style={{ fontWeight: "bold" }}>{res.summer}%</Text>
           </Block>
-          <Block style={{ backgroundColor: "#e17055" }}>
+          <Block style={{ backgroundColor: "rgba(240, 147, 43,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>{res.fall}%</Text>
           </Block>
-          <Block style={{ backgroundColor: "silver" }}>
+          <Block style={{ backgroundColor: "rgba(199, 236, 238,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>{res.winter}%</Text>
           </Block>
         </BlockContainer>

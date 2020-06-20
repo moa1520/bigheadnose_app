@@ -10,7 +10,7 @@ const Conatiner = styled.View`
 `;
 
 const Text = styled.Text`
-  color: #707070;
+  color: #2d3436;
 `;
 
 const Banner = styled.View`
@@ -30,17 +30,15 @@ const Block = styled.TouchableOpacity`
 `;
 
 export default () => {
-  const [menu1, setMenu1] = useState(false);
+  const [menu1, setMenu1] = useState(true);
   const [menu2, setMenu2] = useState(false);
   const [menu3, setMenu3] = useState(false);
-  const [menu4, setMenu4] = useState(false);
 
   const menu1Handle = (p) => {
     if (p === false) {
       setMenu1(true);
       setMenu2(false);
       setMenu3(false);
-      setMenu4(false);
     }
   };
   const menu2Handle = (p) => {
@@ -48,7 +46,6 @@ export default () => {
       setMenu1(false);
       setMenu2(true);
       setMenu3(false);
-      setMenu4(false);
     }
   };
   const menu3Handle = (p) => {
@@ -56,7 +53,6 @@ export default () => {
       setMenu1(false);
       setMenu2(false);
       setMenu3(true);
-      setMenu4(false);
     }
   };
   const menu4Handle = (p) => {
@@ -64,13 +60,12 @@ export default () => {
       setMenu1(false);
       setMenu2(false);
       setMenu3(false);
-      setMenu4(true);
     }
   };
 
   return (
     <Conatiner>
-      <Banner>
+      <Banner style={{ backgroundColor: "rgba(240, 147, 43, 0.8)" }}>
         <Text style={{ fontSize: 28 }}>시크하고 도도한</Text>
         <Text style={{ fontSize: 35, fontWeight: "bold" }}>가을 딥 톤</Text>
         <Text style={{ fontSize: 28 }}>Autumn Deep Tone</Text>
@@ -132,7 +127,7 @@ export default () => {
                 "https://www.ifamily.co.kr/image/arda/result/palette_autumn_wd.jpg",
             }}
             style={{
-              width: constants.width * 0.9,
+              width: constants.width * 0.8,
               height: 180,
               resizeMode: "contain",
             }}
@@ -299,105 +294,6 @@ export default () => {
               피하는 것이좋아요. 광택나는 소재보다는 벨벳과 같은무광택 소재가
               고급스러운 느낌을 살려줘요.
             </Text>
-          </View>
-        </View>
-      ) : null}
-      <Block
-        style={{ backgroundColor: "#cd6133" }}
-        onPress={() => menu4Handle(menu4)}
-      >
-        <Text style={{ color: "white" }}>나와 같은 타입의 연예인</Text>
-      </Block>
-      {menu4 ? (
-        <View
-          style={{
-            backgroundColor: "white",
-            padding: 20,
-            alignItems: "center",
-            width: "90%",
-          }}
-        >
-          <View style={{ width: "100%", marginBottom: 20 }}>
-            <Text>
-              나와 같은 타입을 가진 연예인의 스타일링을 참고해 보세요.{" "}
-              <Text style={{ fontWeight: "bold" }}>
-                가을 웜 딥 타입의 대표적인 셀럽
-              </Text>
-              으로는 이효리, 박시연, 현아, 김유정씨가 있습니다.
-            </Text>
-          </View>
-          <View
-            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
-          >
-            <Image
-              style={{ width: 100, height: 100, marginRight: 10 }}
-              source={{
-                uri: "https://www.ifamily.co.kr/image/icolor/awd_1.jpg",
-              }}
-            />
-            <View>
-              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
-                따뜻한 도시 여자의 품격, 가을 딥{"\n"}③ : 이효리 / 박시연
-              </Text>
-              <Text>
-                겨울딥이 차도녀라면 따도녀는{"\n"}가을딥♡ 가을 웜은 팔레트…
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
-          >
-            <Image
-              style={{ width: 100, height: 100, marginRight: 10 }}
-              source={{
-                uri: "https://www.ifamily.co.kr/image/icolor/awd_2.jpg",
-              }}
-            />
-            <View>
-              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
-                박시연, 박시연스타일, 박시연 패션, {"\n"}웨딩드레스
-              </Text>
-              <Text>
-                매력적인 여자 박시연 스타일,{"\n"}그리고 웨딩드레스 욕감적인…
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
-          >
-            <Image
-              style={{ width: 100, height: 100, marginRight: 10 }}
-              source={{
-                uri: "https://www.ifamily.co.kr/image/icolor/awd_3.jpg",
-              }}
-            />
-            <View>
-              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
-                현아 메이크업 손수비게 하는 팁{"\n"}4가지!
-              </Text>
-              <Text>
-                현아 메이크업 손쉽게하는 팀{"\n"}4가지를 포스팅하려고….
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{ width: "100%", flexDirection: "row", marginBottom: 30 }}
-          >
-            <Image
-              style={{ width: 100, height: 100, marginRight: 10 }}
-              source={{
-                uri: "https://www.ifamily.co.kr/image/icolor/awd_4.jpg",
-              }}
-            />
-            <View>
-              <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
-                가을 웜 딥 대표 연예인 `김유정`{"\n"}스타일링 Best&Worst
-              </Text>
-              <Text>
-                많은 분들의 관심사인 연예인 톤 {"\n"}궁예와 톤 추정 글! 오늘은
-                많은 {"\n"}분들이 `가을 딥` 톤…
-              </Text>
-            </View>
           </View>
         </View>
       ) : null}

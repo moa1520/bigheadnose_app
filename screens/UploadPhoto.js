@@ -43,7 +43,7 @@ const UploadPhoto = ({ route, navigation }) => {
         // .post("https://bigheadnose.herokuapp.com/img_test", { img })
         // .post("http://0.0.0.0:5000/predict", { img });
         .post(
-          "http://ec2-52-79-114-246.ap-northeast-2.compute.amazonaws.com:5000/predict",
+          "http://ec2-13-124-223-25.ap-northeast-2.compute.amazonaws.com:5000/predict",
           { img }
         );
 
