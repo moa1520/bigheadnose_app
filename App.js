@@ -14,20 +14,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Result"
-          component={Result}
-          options={{
-            headerTitle: "퍼스널컬러 진단 결과",
-            headerBackTitleVisible: false,
-            headerTintColor: "black",
-          }}
-        />
-        <Stack.Screen
           name="Home"
           component={Home}
           options={{
             headerTitle: null,
-            headerStyle: { backgroundColor: "#81ecec" },
+            headerStyle: { backgroundColor: "#2d3436" },
           }}
         />
         <Stack.Screen
@@ -36,9 +27,9 @@ const App = () => {
           options={{
             headerTitle: null,
             headerBackTitleVisible: false,
-            headerTintColor: "gray",
+            headerTintColor: "white",
             headerStyle: {
-              backgroundColor: "white",
+              backgroundColor: "#2d3436",
             },
           }}
         />
@@ -48,7 +39,22 @@ const App = () => {
           options={{
             headerTitle: null,
             headerBackTitleVisible: false,
-            headerTintColor: "black",
+            headerTintColor: "white",
+            headerStyle: {
+              backgroundColor: "#2d3436",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Result"
+          component={Result}
+          options={{
+            headerTitle: "퍼스널컬러 진단 결과",
+            headerBackTitleVisible: false,
+            headerTintColor: "white",
+            headerStyle: {
+              backgroundColor: "#2d3436",
+            },
           }}
         />
       </Stack.Navigator>

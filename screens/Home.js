@@ -6,12 +6,14 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: #81ecec;
+  background-color: #2d3436;
 `;
 
 const Button = styled.View`
-  background-color: #00cec9;
-  padding: 5px;
+  background-color: #808e9b;
+  padding: 8px 20px 8px 20px;
+  margin-top: 30;
+  border-radius: 20;
 `;
 
 const Text = styled.Text`
@@ -26,9 +28,9 @@ const TitleContainer = styled.View`
 `;
 
 const Title = styled.Text`
-  font-size: 36px;
+  font-size: 72px;
   font-weight: bold;
-  color: black;
+  color: white;
 `;
 
 const Body = styled.View`
@@ -43,6 +45,11 @@ const Home = ({ navigation }) => {
         <Title>Head</Title>
         <Title>Nose</Title>
       </TitleContainer>
+
+      <Text style={{ color: "#ffdd59", padding: 10, fontSize: 20 }}>
+        사진은 자연광에서 찍어주세요
+      </Text>
+
       <Body>
         <TouchableOpacity
           onPress={() =>

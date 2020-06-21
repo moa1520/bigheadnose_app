@@ -58,9 +58,10 @@ const BlockContainer = styled.View`
 `;
 
 const Result = ({ route, navigation }) => {
-  // const { res } = route.params;
+  const { res } = route.params;
   // let res = { spring: 8, summer: 87, fall: 0, winter: 5 }; // 섬머 라이트
-  let res = { spring: 5, summer: 5, fall: 80, winter: 10 }; // 섬머 라이트
+  // let res = { spring: 8, summer: 9, fall: 11, winter: 80 }; // 윈터 딥
+  // let res = { spring: 5, summer: 5, fall: 80, winter: 10 }; // 가을 딥
 
   const [fallDeep, setFallDeep] = useState(false);
   const [fallSoft, setFallSoft] = useState(false);
@@ -187,7 +188,7 @@ const Result = ({ route, navigation }) => {
     {
       name: "겨울",
       percentage: res.winter,
-      color: "rgba(199, 236, 238,1.0)",
+      color: "rgba(109, 33, 79,1.0)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15,
     },
@@ -225,7 +226,7 @@ const Result = ({ route, navigation }) => {
           <Block style={{ backgroundColor: "rgba(240, 147, 43,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>가을</Text>
           </Block>
-          <Block style={{ backgroundColor: "rgba(199, 236, 238,1.0)" }}>
+          <Block style={{ backgroundColor: "rgba(109, 33, 79, 0.7)" }}>
             <Text style={{ fontWeight: "bold" }}>겨울</Text>
           </Block>
         </BlockContainer>
@@ -239,7 +240,7 @@ const Result = ({ route, navigation }) => {
           <Block style={{ backgroundColor: "rgba(240, 147, 43,1.0)" }}>
             <Text style={{ fontWeight: "bold" }}>{res.fall}%</Text>
           </Block>
-          <Block style={{ backgroundColor: "rgba(199, 236, 238,1.0)" }}>
+          <Block style={{ backgroundColor: "rgba(109, 33, 79, 0.7)" }}>
             <Text style={{ fontWeight: "bold" }}>{res.winter}%</Text>
           </Block>
         </BlockContainer>

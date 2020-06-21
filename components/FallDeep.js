@@ -149,38 +149,8 @@ export default () => {
             width: "90%",
           }}
         >
-          <View style={{ width: "100%" }}>
-            <Text style={{ fontWeight: "bold" }}>1. 메이크업</Text>
-            <Text>- 아이</Text>
-            <Text>
-              노란빛이 도는 브라운 섀도우를 베이스로 깔고, 잿빛이 도는
-              브라운이나 카키색 섀도우를 활용하여 깊은 음영을 주세요. 짙은 갈색
-              아이라이너로 선명해 보이는 인상을 만들어주세요.
-            </Text>
-            <Text style={{ marginTop: 10 }}>- 치크</Text>
-            <Text>
-              오렌지 브라운 컬러의 블러셔를 사선 방향으로 발색해 주세요.
-            </Text>
-            <Text>
-              섀딩과 자연스럽게 연결하면 건강하고 관능적인 느낌을 줍니다.
-            </Text>
-            <Text style={{ marginTop: 10 }}>- 립</Text>
-            <Text>아이 메이크업이 강조될 수 있도록,</Text>
-            <Text>스킨 톤의 립스틱을 발라주세요.</Text>
-            <Text>차분함과 고급스러움을 더해 줍니다.</Text>
-          </View>
-          <Image
-            source={{
-              uri: "https://www.ifamily.co.kr/image/icolor/cometic_awd.png",
-            }}
-            style={{
-              width: constants.width * 0.9,
-              height: 180,
-              resizeMode: "contain",
-            }}
-          />
           <View style={{ width: "100%", marginTop: 20 }}>
-            <Text style={{ fontWeight: "bold" }}>2. 헤어</Text>
+            <Text style={{ fontWeight: "bold" }}>1. 헤어</Text>
             <Text>- 컬러</Text>
             <Text>
               붉은빛이 도는 딥한 오렌지 브라운 컬러의 염색이 잘 어울립니다.
@@ -189,7 +159,7 @@ export default () => {
               - 스타일링 굵은 웨이브가 들어간 긴 머리는 무게감 있으면서 안정된
               분위기를 연출해줍니다.
             </Text>
-            <Text style={{ fontWeight: "bold", marginTop: 30 }}>3. 패션</Text>
+            <Text style={{ fontWeight: "bold", marginTop: 30 }}>2. 패션</Text>
             <Text>가을 뮤트톤보다 채도가 높은 컬러의 옷이 어울립니다. </Text>
             <Text>
               짙은 브라운 컬러나 버건디 컬러의 메머이드라인 드레스를 입으면 한층
@@ -255,18 +225,6 @@ export default () => {
             }}
           />
           <View style={{ marginTop: 30, width: "100%" }}>
-            <Text style={{ fontWeight: "bold", marginBottom: 20 }}>
-              메이크업
-            </Text>
-            <Text>
-              - 실버 펄 섀도우는 눈을 부어 보이게 할수 있어요. 밝고 선명한
-              오렌지나 코랄컬러 섀도우를 사용하고 싶다면 베이지,브라운 색의
-              섀도우를 베이스로 깔아 자연스럽게 연출해주세요.
-            </Text>
-            <Text>
-              - 아이메이크업을 진하게 하기 보다는 립이나 치크에 포인트를 주는게
-              더 잘 어울려요.
-            </Text>
             <Text
               style={{ fontWeight: "bold", marginTop: 30, marginBottom: 20 }}
             >

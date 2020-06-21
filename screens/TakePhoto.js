@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { Camera } from "expo-camera";
 import * as MediaLibrary from "expo-media-library";
 import * as Permissions from "expo-permissions";
@@ -10,7 +10,7 @@ import Loader from "../components/Loader";
 
 const Container = styled.View`
   flex: 1;
-  background-color: white;
+  background-color: #2d3436;
 `;
 
 const CameraView = styled.View`
@@ -22,16 +22,15 @@ const CameraView = styled.View`
 const Text = styled.Text``;
 
 const Button = styled.View`
-  background-color: lightpink;
-  width: 80px;
-  height: 80px;
+  background-color: #2f3542;
+  width: 70px;
+  height: 70px;
   border-radius: 50px;
-  border: 10px solid rgba(255, 255, 255, 0.6);
+  border: 10px solid rgba(255, 255, 255, 0.8);
 `;
 
 const Bottom = styled.View`
   flex: 1;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;

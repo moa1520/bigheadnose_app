@@ -155,32 +155,8 @@ export default () => {
             width: "90%",
           }}
         >
-          <View style={{ width: "100%" }}>
-            <Text style={{ fontWeight: "bold" }}>1. 메이크업</Text>
-            <Text>- 아이</Text>
-            <Text>
-              흰빛이 많이 돌고 쉬머한 필이 든 핑크 컬러 섀도우를 연하게
-              발라주세요.{"\n"}블랙 컬러의 아이라이너로 라인을 또렷하고 얇게
-              그려주세요. {"\n"}
-              {"\n"}- 치크{"\n"}흰빛이 많이 도는 핑크나 라벤더 컬러의 블러셔를
-              볼 중앙에 여리여리하게 발색하면 청순함을 더할 수 있습니다.{"\n"}
-              {"\n"}- 립{"\n"}딸기우유를 연상하게 하는 핑크 컬러를 입술에
-              전체적으로 채워 발라주세요.{"\n"}글로시한 체형의 틴트가 잘
-              어울립니다.
-            </Text>
-          </View>
-          <Image
-            source={{
-              uri: "https://www.ifamily.co.kr/image/icolor/cometic_scl.png",
-            }}
-            style={{
-              width: constants.width * 0.9,
-              height: 180,
-              resizeMode: "contain",
-            }}
-          />
           <View style={{ width: "100%", marginTop: 20 }}>
-            <Text style={{ fontWeight: "bold" }}>2. 헤어</Text>
+            <Text style={{ fontWeight: "bold" }}>1. 헤어</Text>
             <Text>
               - 컬러 진한 흑갈색이나 애쉬 브라운 컬러의 염색은 투명한 피부를
               강조해 줍니다.{"\n"}
@@ -190,7 +166,7 @@ export default () => {
             </Text>
           </View>
           <View style={{ width: "100%", marginTop: 20 }}>
-            <Text style={{ fontWeight: "bold" }}>3. 패션</Text>
+            <Text style={{ fontWeight: "bold" }}>2. 패션</Text>
             <Text>
               컬러 대비감이 큰 스타일링 보다는 톤온톤 매치나 무채색의 스타일링이
               어울립니다. {"\n"}대체로 흰색이 베스트 컬러이며, 흰 기가 많이 도는
@@ -254,16 +230,6 @@ export default () => {
             }}
           />
           <View style={{ marginTop: 30, width: "100%" }}>
-            <Text style={{ fontWeight: "bold", marginBottom: 20 }}>
-              메이크업
-            </Text>
-            <Text>
-              - 피부 화장을 두껍게 하면 답답해 보이니 최대한 얇게 해주세요.
-              {"\n"}- 푸른 다크서클이 눈에 잘 띄기 때문에 다크서클 커버에 신경
-              써주세요. {"\n"}- 주황빛의 선명한 컬러는 얼굴에 답답한 느낌을 주니
-              핑크빛이 들어간 립을 사용해주세요. 매트한 립보다는 글로시한 제형이
-              더 잘 어울려요.
-            </Text>
             <Text
               style={{ fontWeight: "bold", marginTop: 30, marginBottom: 20 }}
             >
